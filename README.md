@@ -29,12 +29,12 @@
 |------|----|-------|
 |body|text|　|
 |image|string|  |
-|user_id|references|foreign_key: true,index:true|
-|group_id|references|foreign_key: true,index:true|
+|user_id|references|foreign_key: true,null: fals|
+|group_id|references|foreign_key: true,null: fals|
 
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 ## groups_usersテーブル
 
