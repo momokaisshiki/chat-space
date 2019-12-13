@@ -1,0 +1,26 @@
+.chat_main
+  .chat_main__header
+    .chat_main__header__group
+      .chat_main__header__group__left-box
+        ABC
+        %ul.chat_main__header__group__left-box__member-list
+          Member :
+          %li.chat_main__header__group__left-box__member-list__name
+            一色
+      .chat_main__header__group__edit
+        = link_to "Edit", root_path, class: "edit-btn"
+  .chat_main__contents
+    .chat_main__contents__lists 
+      .chat_main__contents__lists__name 
+        %p.chat_main__contents__lists__name__talker momo
+        %p.chat_main__contents__lists__name__date 12/12        
+      .chat_main__contents__lists__text abcde
+  .chat_main__footer
+    .chat_main__footer__form
+      .chat_main__footer__form__text
+        %input{:placeholder => "message", :class => "chat_main__footer__form__text__message", :type => "text"}
+        %label{ class: "chat_main__footer__form__text__image"}
+          =icon('fa', 'image')
+        %input{type: "file", class:"chat_main__footer__form__text__image__file"}
+        .chat_main__footer__form__text__send 
+          Send
