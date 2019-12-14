@@ -1,5 +1,5 @@
 .chat_side { 
- .chat_side__header{
+  &__header{
     &__user-name{
       height: 100px;
       width: 300px;
@@ -39,7 +39,7 @@
       }  
     }
   }
-  .chat_side__contents{
+  &__contents{
     &__group-list{
       height: calc(100vh - 100px);
       width:300px;
