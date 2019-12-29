@@ -80,44 +80,51 @@
   }
 }
 .chat_main__footer{
-  width: calc(100vw - 300px); 
+  // width: calc(100vw - 300px); 
     &__form{
+      background-color: #DDDDDD;
+      box-sizing: border-box;
       height: 90px;
-      padding: 20px 40px;
-      display: flex;
-      background-color:  #ddd;
-      &__text{        
+      padding: 20px 50px 20px 40px;
+      // height: 90px;
+      // padding: 20px 40px;
+      // display: flex;
+      // background-color:  #ddd;
+      &__text{
+        border: none;
+        float: left;
+        height: 50px;
+        width: 100% ;       
         position: relative;
         display: flex;
-        width: 100%;
-        &__message{
-          line-height: 50px;
-          width: 100%;
-          padding: 0 40px 0 10px;
-          color: #434a54;
-          border-style: none;
+      &__message{
+          background-color: white;
+          height: 50px;
+          padding-right: 10px;
+          flex-grow:1;
         }
         &__image{
-          font-size:  1.3rem;
+          font-size: 20px;
+          line-height: 50px;
           position: absolute;
-          top: 10px;
           right: 130px; 
-          color:black;
           .fa-image{
-            right: 10px;            
+            font-size: 20px;
+            line-height: 50px;          
           }
           &__file{
             display: none;          
           }
         }        
         &__send{
-          width: 100px;
+          background-color:#38aef0;
+          border: none;
+          color: $white;
+          float: right;
+          font-size: 16px;
           height: 50px;
-          padding: 15px 30px;
           margin-left: 15px;
-          background-color: #38aef0;
-          color: white;
-          text-align: center;
+          padding: 0 30px;
         }
       }
     }
