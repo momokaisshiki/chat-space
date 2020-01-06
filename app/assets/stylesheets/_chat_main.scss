@@ -53,11 +53,12 @@
 }
 .chat_main__contents{
   width: calc(100vw - 300px);
+  height: calc(100vh - 190px);
+  padding: 46px 40px;
+  background-color:#fafafa;
+  overflow: scroll;
   &__lists{
-    height: calc(100vh - 190px);
-    padding: 46px 40px;
-    background-color:#fafafa;
-    overflow: scroll;
+    min-height: 60px;
     &__name{
       display: flex;
       margin-bottom: 10px;
