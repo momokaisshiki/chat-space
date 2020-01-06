@@ -41,7 +41,6 @@ $(function(){
  }
 $('.new_message').on('submit', function(e){ 
  e.preventDefault();
- console.log(111)
  var formData = new FormData(this);
  var url = $(this).attr('action')
  $('chat_main__footer__form__text__send').removeAttr('data-disable-with');
