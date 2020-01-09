@@ -1,4 +1,5 @@
 $(function(){ 
+  last_message_id = $('.message:last').data("message-id");
   function buildHTML(message){
    if ( message.image ) {
      var html =
@@ -6,7 +7,7 @@ $(function(){
      <div class="chat_main__contents__lists__name">
      ${message.user_name}
      <p class="chat_main__contents__lists__name__date">
-     ${message.date}
+     ${message.created_at}
      </p>
      </div>
      <div class="lower-message">
@@ -25,7 +26,7 @@ $(function(){
      <div class="chat_main__contents__lists__name">
      ${message.user_name}
      <p class="chat_main__contents__lists__name__date">
-     ${message.date}
+     ${message.created_atrrails }
      </p>
      </div>
      <div class="lower-message">
@@ -63,4 +64,31 @@ $('.new_message').on('submit', function(e){
    });
    return false;
  });
+  var reloadMessages = function() {
+  last_message_id = $('.chat_main__contents:last').data("message-id");
+  $.ajax({
+    url: "api/messages",
+    type: 'get',
+    dataType: 'json',
+    data: {id: last_message_id}
+  })
+  .done(function(messages) {
+    if (messages.length !== 0) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+      $('.chat_main__contents').append(insertHTML);
+      $('.chat_main__contents').animate({ scrollTop: $('.chat_main__contents')[0].scrollHeight});
+      $("#new_message")[0].reset();
+      $(".chat_main__footer__form__text__send").prop("disabled", false);
+    }
+  })
+  .fail(function() {
+    alert('error');
+  });
+};
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
 });
