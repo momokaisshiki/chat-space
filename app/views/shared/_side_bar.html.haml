@@ -5,8 +5,9 @@
         .chat_side__header__user-name__top-items__name
           = current_user.name 
         .chat_side__header__user-name__top-items__icons
-          =link_to new_group_path do 
+          =link_to new_group_path do
             = icon('fas', 'edit', class: "chat_side__header__user-name__top-items__icons__btn-edit")
+          =link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: "chat_side__header__user-name__top-items__icons__btn-cog") 
 
   .chat_side__contents

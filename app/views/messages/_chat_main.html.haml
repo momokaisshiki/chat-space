@@ -6,7 +6,7 @@
           = @group.name
         %ul.chat_main__header__group__left-box__member-list
           Member :
-          %li.chat_main__header__group__left-box__member-list__name
+          %i.chat_main__header__group__left-box__member-list__name
             - @group.group_users.each do |group_user|
               = group_user.user.name
       .chat_main__header__group__edit
